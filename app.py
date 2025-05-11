@@ -35,9 +35,9 @@ def upload_voice():
     return jsonify({'error': 'Invalid file type'}), 400
 
 # Endpoint để serve file
-# @app.route('/uploads/<filename>')
-# def serve_file(filename):
-#     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+@app.route('/uploads/<filename>')
+def serve_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 @app.route('/convert', methods=['POST'])
 def convert():
